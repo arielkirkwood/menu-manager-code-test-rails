@@ -7,4 +7,12 @@ class MenuItemTest < ActiveSupport::TestCase
 
     refute dup_item.valid?
   end
+
+  test "validates the uniqueness of dish across multiple menus" do
+    menu_items = [menu_items(:one), menu_items(:two)]
+    dup_item = MenuItem.new(menu_items.first.attributes.except(:id))
+    dup_item.menu = menu_items.last.menu
+
+    refute dup_item.valid?
+  end
 end
