@@ -16,12 +16,6 @@ class MenuTest < ActiveSupport::TestCase
     assert_includes menu.errors.full_messages, "Name can't be blank", "failed to add error message after validation"
   end
 
-  test "has access to an associated collection of dishes" do
-    menu = Menu.new
-
-    assert menu.dishes, "failed to define dishes association"
-  end
-
   test "provides access to associated dish records when available" do
     menu = menus(:starters)
 
