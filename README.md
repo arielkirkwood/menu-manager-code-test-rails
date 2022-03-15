@@ -1,32 +1,14 @@
 # README
 
-Thank you for accepting our coding challenge. We ask that you spend about 2-3 hours on this task. It's also fine to take as much time as required to give us a good indication of your coding strengths, as your application will provide many topics of conversation in the next interview stage.
-
-However, in this challenging time, we understand that not everyone has the luxury of sitting down to work on a test uninterrupted. Therefore if you don't manage to implement all of the rules, please describes how you would achieve them or any improvement you would make in the email.
+Hello! Thank you for reviewing this code challenge submission!
 
 ## Submission
 
-Please submit your program as an online repository or downloadable link to your point of contact at OpenTable.
+This Rails application can be viewed live at https://menu-manager-code-test-rails.herokuapp.com/
 
 ## The app
 
-We have prepared this scaffold app for you to work in. It can be run completely with Docker and docker-compose, but if you prefer you can run it directly on your machine. The app is setup for Ruby 2.7.5 and Rails 7.
-
-The app is generated with this command: `rails new --skip-action-mailer --skip-action-mailbox --skip-action-text --skip-active-storage --skip-action-cable --skip-hotwire --skip-active-job`. But feel free to add back any libraries you want to work with.
-
-You are also free to add and remove any gems as you see fit.
-
-### Initial setup
-
-- Build the docker image: `docker-compose build`
-- Create the databases: `docker-compose run web rails db:setup`
-
-### Running the app and regular tasks
-
-- Start the Rails app server: `docker-compose up`
-- Run the tests: `docker-compose run web rails test`
-- Generate a new model: `docker-compose run web rails generate model widget name:string`
-- Run migrations: `docker-compose run web rails db:migrate`
+The app uses the forked starting point, swapping in PostgreSQL as the database to enable easy hosting on Heroku.
 
 ## The task
 
