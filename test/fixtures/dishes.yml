@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+soup:
+  name: Soup
+  price: 3
+  menu: starters
+
+salad:
+  name: Salad
+  price: 5
+  menu: mains
