@@ -1,7 +1,8 @@
 class Dish < ApplicationRecord
   NAME_FILTER_EXPRESSION = /\A[eE].*\z/
 
-  belongs_to :menu
+  has_one :menu_item
+  has_one :menu, through: :menu_item
 
   validates :name, presence: true, format: { without: NAME_FILTER_EXPRESSION, message: "must not start with any kind of letter e or E" }
   validates :price, presence: true
