@@ -1,6 +1,13 @@
 require "test_helper"
 
 class DishTest < ActiveSupport::TestCase
+  test "validates the uniqueness of a name" do
+    dish = Dish.new(name: dishes(:soup).name)
+
+    refute dish.valid?, "failed to check for name uniqueness during validation"
+    assert_includes dish.errors.full_messages, "Name has already been taken", "failed to add dish name error message after validation"
+  end
+
   test "validates the presence of a name" do
     dish = Dish.new(price: 0)
 
