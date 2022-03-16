@@ -1,1 +1,11 @@
-<%= render @menus %>
+<div class="row row-cols-2 g-4">
+  <%= render @menus %>
+
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-body d-flex justify-content-center align-items-center">
+        <%= link_to 'Add menu', new_menu_path, class: 'btn btn-link stretched-link' %>
+      </div>
+    </div>
+  </div>
+</div>

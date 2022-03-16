@@ -11,7 +11,9 @@
   </head>
 
   <body>
-    <%= tag.h1 Rails.application.class.name.titleize %>
-    <%= yield %>
+    <div class="container mt-5">
+      <%= tag.h1 Rails.application.class.name.titleize %>
+      <%= yield %>
+    </div>
   </body>
 </html>
