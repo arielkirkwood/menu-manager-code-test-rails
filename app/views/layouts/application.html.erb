@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RailsChallenge</title>
+    <%= tag.title Rails.application.class.name.titleize %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    <%= tag.h1 Rails.application.class.name.titleize %>
     <%= yield %>
   </body>
 </html>
