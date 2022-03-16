@@ -1,6 +1,13 @@
 require "test_helper"
 
 class DishTest < ActiveSupport::TestCase
+  test "validates the uniqueness of a name" do
+    dish = Dish.new(name: dishes(:soup).name)
+
+    refute dish.valid?, "failed to check for name uniqueness during validation"
+    assert_includes dish.errors.full_messages, "Name has already been taken", "failed to add dish name error message after validation"
+  end
+
   test "validates the presence of a name" do
     dish = Dish.new(price: 0)
 
@@ -27,6 +34,6 @@ class DishTest < ActiveSupport::TestCase
     dish = menu.dishes.build(name: 'Mozzarella Sticks', price: Menu::CURSED_TOTAL_PRICE - menu.total_price)
 
     refute dish.valid?, "failed to validate that the `dish`'s `price` #{dish.price} would not cause the `menu`'s `total_price` #{menu.total_price} to equal the cursed value #{Menu::CURSED_TOTAL_PRICE}"
-    assert_includes dish.errors.full_messages, "Price would cause #{menu.name} menu to have a total price of #{Menu::CURSED_TOTAL_PRICE}", "failed to add dish price cursed menu total price error message after validation"
+    assert_includes dish.errors.full_messages, "Price would cause the associated menu to have a total price of #{Menu::CURSED_TOTAL_PRICE}", "failed to add dish price cursed menu total price error message after validation"
   end
 end
