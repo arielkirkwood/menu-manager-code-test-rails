@@ -12,8 +12,12 @@ class Dish < ApplicationRecord
   private
 
   def price_cannot_cause_menu_total_price_to_be_cursed
-    return if price.blank? || menu.blank?
+    return if price.blank? || menu_total_price.blank?
 
-    errors.add(:price, "would cause #{menu.name} menu to have a total price of #{Menu::CURSED_TOTAL_PRICE}") if (menu.total_price + price) == Menu::CURSED_TOTAL_PRICE
+    errors.add(:price, "would cause the associated menu to have a total price of #{Menu::CURSED_TOTAL_PRICE}") if menu_total_price == Menu::CURSED_TOTAL_PRICE
+  end
+
+  def menu_total_price
+    @menu_total_price ||= menu&.total_price || menu_item&.menu&.total_price
   end
 end

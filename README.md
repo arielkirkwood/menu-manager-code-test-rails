@@ -22,7 +22,7 @@ Write as clean and maintainable code as possible, and make sure that it's covere
 - [x] The user must be able to add dishes to these menus
   - [x] Dishes must have a name and a price
 - [x] Add a JSON API endpoint that exposes all menus and their dishes (viewable at https://menu-manager-code-test-rails.herokuapp.com/menus.json)
-- [ ] The test suite passes
+- [x] The test suite passes
 - [x] The same dish name can not appear in more than one menu
 - [x] The sum of the prices of all dishes in a single menu can not be `77`.
 - [x] Dish names may not start with the letter `E`.

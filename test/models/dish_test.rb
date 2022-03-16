@@ -27,6 +27,6 @@ class DishTest < ActiveSupport::TestCase
     dish = menu.dishes.build(name: 'Mozzarella Sticks', price: Menu::CURSED_TOTAL_PRICE - menu.total_price)
 
     refute dish.valid?, "failed to validate that the `dish`'s `price` #{dish.price} would not cause the `menu`'s `total_price` #{menu.total_price} to equal the cursed value #{Menu::CURSED_TOTAL_PRICE}"
-    assert_includes dish.errors.full_messages, "Price would cause #{menu.name} menu to have a total price of #{Menu::CURSED_TOTAL_PRICE}", "failed to add dish price cursed menu total price error message after validation"
+    assert_includes dish.errors.full_messages, "Price would cause the associated menu to have a total price of #{Menu::CURSED_TOTAL_PRICE}", "failed to add dish price cursed menu total price error message after validation"
   end
 end
