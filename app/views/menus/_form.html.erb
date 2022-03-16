@@ -1,3 +1,15 @@
+<% if @menu.errors.any? %>
+  <div id="error_explanation">
+    <%= tag.strong "#{pluralize(@menu.errors.count, "error")} prohibited this menu from being saved:" %>
+
+    <ul>
+      <% @menu.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with model: @menu do |f| %>
   <div class="mb-3">
     <%= f.label :name, class: 'form-label' %>

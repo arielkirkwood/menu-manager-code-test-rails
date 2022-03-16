@@ -1,3 +1,15 @@
+<% if @dish.errors.any? %>
+  <div id="error_explanation">
+    <%= tag.strong "#{pluralize(@dish.errors.count, "error")} prohibited this dish from being saved:" %>
+
+    <ul>
+      <% @dish.errors.each do |error| %>
+        <li><%= error.full_message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with(model: [@menu, @dish]) do |f| %>
   <div class="mb-3">
     <%= f.label :name, class: 'form-label' %>
