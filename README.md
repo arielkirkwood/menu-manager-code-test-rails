@@ -16,6 +16,14 @@ Create a CR(UD) application to manage menus for a restaurant. This restaurant, u
 
 Write as clean and maintainable code as possible, and make sure that it's covered by test cases. We recommend focusing on the data flow before making a fancy UI.
 
+### Local setup for test suite validation
+
+1. Please use a local Ruby installation and a local Postgres installation.
+2. With the application cloned to your computer, navigate to the repo.
+3. Run `bundle` to install dependencies
+4. Run `rails db:setup` to create the local development and test databases, and seed them with seed data.
+5. Run `rails test` to run the test suite and validate that tests pass.
+
 ### Acceptance criteria (met)
 
 - [x] The user must be able to add menus, like Starters and Mains
