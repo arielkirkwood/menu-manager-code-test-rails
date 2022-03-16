@@ -1,1 +1,12 @@
-<%= render menu.dishes %>
+<div class="col">
+  <div class="card h-100">
+    <div class="card-header">
+      <%= menu.name %>
+    </div>
+    <div class="card-body">
+      <%= render menu.dishes %>
+
+      <%= link_to "Add dish", new_menu_dish_path(menu) %>
+    </div>
+  </div>
+</div>

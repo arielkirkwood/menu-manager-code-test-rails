@@ -5,7 +5,7 @@ class Dish < ApplicationRecord
   has_one :menu, through: :menu_item
 
   validates :name, presence: true, format: { without: NAME_FILTER_EXPRESSION, message: "must not start with any kind of letter e or E" }
-  validates :price, presence: true
+  validates :price, presence: true, numericality: { only_integer: true }
 
   validate :price_cannot_cause_menu_total_price_to_be_cursed
 
